@@ -2,6 +2,12 @@ FROM thawsystems/wine-stable:latest
 
 USER root
 
+RUN wget -nc https://dl.winehq.org/wine-builds/winehq.key \
+  && apt-key add winehq.key \
+  && apt-get update -y && apt-get install -y \
+  git \
+  && rm -rf /var/lib/apt/lists/*
+
 USER wine
 WORKDIR $HOME
 

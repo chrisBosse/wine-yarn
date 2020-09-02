@@ -11,7 +11,7 @@ RUN wget -nc https://dl.winehq.org/wine-builds/winehq.key \
 USER wine
 WORKDIR $HOME
 
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash \
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash \
   && export NVM_DIR="$HOME/.nvm" \
   && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" \
   && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
